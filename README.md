@@ -13,10 +13,16 @@ The following 2 class demonstrated 2 ways to create the listener.
 Consumer class relied on Spring Boot to perform all the setup (ConsumerFactory, Listener Container Factory).
 ConsumerUsingFactory relied on the ConsumerFactory and ConcurrentKafkaListenerContainerFactory in KafkaConfig.
 
-## To run the Spring Boot app, run the following command line: 
+## Run the Spring Boot app 
 `${JAVA_HOME}/bin/java -jar -Dspring.profiles.active=dev ./target/spring-boot-kafka-1.0.0-SNAPSHOT.jar`
 
 Note: there is currently no spring profile defined in this repo.
 
 You can run multiple instances of the demo application.  The web server is disbaled.  
-Kafka and Spring Boot should take care of the listeners based on the number of topic partitions in Kafka and the number of app instances running. 
+Kafka and Spring Boot should take care of the listeners based on the number of topic partitions in Kafka and the number of app instances running.
+
+## To Send test message to a Kafka topic on local Kafka
+${KAFKA_HOME}/bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092
+
+See this page for setup local Kafka and send text message to topic.
+https://kafka.apache.org/quickstart
