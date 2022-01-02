@@ -5,7 +5,7 @@ This application uses 2 Kafka topics.
 The quickstart-event topic was created with 2 partitions in my test.
 The quickstart-multi-event topic was created with 3 partitions in my test.
 
-The number of listener thread is defined in the application.properties file `setting spring.kafka.listener.concurrency`.
+The number of listener thread is defined in the application.properties file `spring.kafka.listener.concurrency`.
 This tells Spring Boot how many threads to use for the listener.  
 When there are multiple partitions per topic, multiple threads are used to consume the message.
 
